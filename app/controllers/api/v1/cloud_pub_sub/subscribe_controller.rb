@@ -5,7 +5,7 @@ class Api::V1::CloudPubSub::SubscribeController < ApplicationController
     verifier = Google::Auth::IDTokens::Verifier.new key_source: source
     payload = verifier.verify token
 
-    SubscribeLog.create(token: token, payload: payload)
+    SubscribeLog.create(token: token, payload: payload, params: params)
   end
 
   private
