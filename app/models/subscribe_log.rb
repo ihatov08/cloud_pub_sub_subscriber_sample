@@ -1,3 +1,5 @@
+require 'google/apis/androidpublisher_v3'
+
 class SubscribeLog < ApplicationRecord
   def get_purchase_subscription
     service.get_purchase_subscription(package_name, subscription_id, purchase_token)
@@ -39,7 +41,7 @@ class SubscribeLog < ApplicationRecord
   def service
     @service ||=
     begin
-      service = Androidpublisher::AndroidPublisherService.new
+      service = Google::Apis::AndroidpublisherV3::AndroidPublisherService.new
       service.authorization = authorizer
       service
     end
