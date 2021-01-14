@@ -1,3 +1,4 @@
+require 'googleauth'
 require 'google/apis/androidpublisher_v3'
 
 class SubscribeLog < ApplicationRecord
